@@ -62,6 +62,11 @@ namespace DigiShop.Data.GenericRepository
             return await dbContext.Set<TEntity>().AsNoTracking().Where(conditions).ToListAsync();
         }
 
+        public async Task<TEntity> FirstOrDefault(Expression<Func<TEntity, bool>> conditions)
+        {
+            return await dbContext.Set<TEntity>().AsNoTracking().Where(conditions).FirstOrDefaultAsync();
+        }
+
         public async Task<TEntity> GetWithIncludeAsync(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includes)
         {
             IQueryable<TEntity> query = dbContext.Set<TEntity>();

@@ -21,6 +21,10 @@ namespace DigiShop.Data.Configuration
                 .IsRequired()
                 .HasMaxLength(50);
 
+            builder.Property(u => u.UserName)
+                .IsRequired()
+                .HasMaxLength(100);
+
             builder.Property(u => u.Email)
                 .IsRequired()
                 .HasMaxLength(100);
@@ -32,6 +36,9 @@ namespace DigiShop.Data.Configuration
             builder.Property(u => u.Password)
                 .IsRequired()
                 .HasMaxLength(50);
+
+            builder.Property(u => u.Status)
+                .IsRequired();
 
             builder.Property(u => u.Status)
                 .IsRequired();

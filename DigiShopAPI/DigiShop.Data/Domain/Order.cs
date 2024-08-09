@@ -1,7 +1,10 @@
 ﻿using DigiShop.Base.Entity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DigiShop.Data.Domain
 {
+    [Table("Order", Schema = "dbo")]
+
     public class Order : BaseEntity
     {
         public int Id { get; set; }

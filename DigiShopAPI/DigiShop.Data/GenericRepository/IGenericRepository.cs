@@ -13,6 +13,10 @@ namespace DigiShop.Data.GenericRepository
         Task<List<TEntity>> GetAll();
         Task<IQueryable<TEntity>> GetAllAsIQueryable();
         Task<IEnumerable<TEntity>> Where(Expression<Func<TEntity, bool>> conditions);
+        Task<TEntity> FirstOrDefault(Expression<Func<TEntity, bool>> conditions);
+
+        //Task<List<TEntity>> Where(Expression<Func<TEntity, bool>> expression, params string[] includes);
+        //Task<TEntity> FirstOrDefault(Expression<Func<TEntity, bool>> expression, params string[] includes);
         Task<TEntity> GetWithIncludeAsync(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includes);
         Task<IEnumerable<TEntity>> GetAllWithIncludeAsync(Expression<Func<TEntity, bool>> predicate, params Expression<Func<TEntity, object>>[] includes);
 

@@ -1,9 +1,12 @@
 ﻿
 
 using DigiShop.Base.Entity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DigiShop.Data.Domain 
 {
+    [Table("Product", Schema = "dbo")]
+
     public class Product : BaseEntity
     {
         public int Id { get; set; }

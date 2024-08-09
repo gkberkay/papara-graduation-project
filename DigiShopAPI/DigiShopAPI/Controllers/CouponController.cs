@@ -3,11 +3,13 @@ using Microsoft.AspNetCore.Mvc;
 using DigiShop.Bussiness.Cqrs;
 using MediatR;
 using DigiSopAPI.Base.Response;
+using Microsoft.AspNetCore.Authorization;
 
 namespace DigiShopAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [Authorize]
     public class CouponController : ControllerBase
     {
         private readonly IMediator mediator;
