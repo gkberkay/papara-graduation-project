@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FluentValidation" Version="9.5.2" />
+    <PackageReference Include="FluentValidation.AspNetCore" Version="9.5.2" />
+    <PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="9.5.2" />
+    <PackageReference Include="MediatR" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DigiShop.Base\DigiShop.Base.csproj" />
+    <ProjectReference Include="..\DigiShop.Data\DigiShop.Data.csproj" />
+    <ProjectReference Include="..\DigiShop.Schema\DigiShop.Schema.csproj" />
+  </ItemGroup>
+
+</Project>

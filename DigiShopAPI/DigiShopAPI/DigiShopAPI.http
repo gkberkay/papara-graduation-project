@@ -1,0 +1,6 @@
+@DigiShopAPI_HostAddress = http://localhost:5038
+
+GET {{DigiShopAPI_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
