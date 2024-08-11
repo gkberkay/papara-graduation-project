@@ -29,7 +29,6 @@ namespace DigiShop.Bussiness.Command
         public async Task<ApiResponse<CouponResponse>> Handle(CreateCouponCommand request, CancellationToken cancellationToken)
         {
             var mapped = _mapper.Map<CouponRequest, Coupon>(request.Request);
-            //mapped.CustomerNumber = new Random().Next(1000000, 9999999);
             await _unitOfWork.CouponRepository.Insert(mapped);
             await _unitOfWork.Complete();
 

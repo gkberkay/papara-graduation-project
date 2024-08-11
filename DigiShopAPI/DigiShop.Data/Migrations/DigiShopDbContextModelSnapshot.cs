@@ -106,7 +106,6 @@ namespace DigiShop.Data.Migrations
                         .HasColumnType("decimal(18,2)");
 
                     b.Property<string>("CouponCode")
-                        .IsRequired()
                         .HasMaxLength(10)
                         .HasColumnType("nvarchar(10)");
 
@@ -216,23 +215,67 @@ namespace DigiShop.Data.Migrations
                     b.Property<decimal>("PointsPercentage")
                         .HasColumnType("decimal(18,2)");
 
+                    b.Property<int>("Price")
+                        .HasColumnType("int");
+
                     b.Property<int>("StockCount")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
 
                     b.ToTable("Product", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "Oyun",
+                            InsertDate = new DateTime(2024, 8, 11, 19, 42, 13, 236, DateTimeKind.Utc).AddTicks(5548),
+                            InsertUser = "System",
+                            IsActive = true,
+                            MaxPoints = 0m,
+                            Name = "KnightOnline",
+                            PointsPercentage = 5m,
+                            Price = 25,
+                            StockCount = 5
+                        },
+                        new
+                        {
+                            Id = 2,
+                            Description = "Oyun",
+                            InsertDate = new DateTime(2024, 8, 11, 19, 42, 13, 236, DateTimeKind.Utc).AddTicks(5554),
+                            InsertUser = "System",
+                            IsActive = true,
+                            MaxPoints = 0m,
+                            Name = "Csgo",
+                            PointsPercentage = 3m,
+                            Price = 15,
+                            StockCount = 10
+                        },
+                        new
+                        {
+                            Id = 3,
+                            Description = "Oyun",
+                            InsertDate = new DateTime(2024, 8, 11, 19, 42, 13, 236, DateTimeKind.Utc).AddTicks(5556),
+                            InsertUser = "System",
+                            IsActive = true,
+                            MaxPoints = 0m,
+                            Name = "LeagueOfLegends",
+                            PointsPercentage = 4m,
+                            Price = 20,
+                            StockCount = 8
+                        });
                 });
 
             modelBuilder.Entity("DigiShop.Data.Domain.ProductCategory", b =>
                 {
-                    b.Property<int>("ProductId")
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
                         .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
                     b.Property<int>("CategoryId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("Id")
                         .HasColumnType("int");
 
                     b.Property<DateTime>("InsertDate")
@@ -246,9 +289,14 @@ namespace DigiShop.Data.Migrations
                     b.Property<bool>("IsActive")
                         .HasColumnType("bit");
 
-                    b.HasKey("ProductId", "CategoryId");
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
 
                     b.HasIndex("CategoryId");
+
+                    b.HasIndex("ProductId");
 
                     b.ToTable("ProductCategories", (string)null);
                 });
@@ -317,6 +365,24 @@ namespace DigiShop.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("User", (string)null);
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DigitalWallet = 0m,
+                            Email = "gokberk.ay@gmail.com",
+                            FirstName = "Gökberk",
+                            InsertDate = new DateTime(2024, 8, 11, 19, 42, 13, 237, DateTimeKind.Utc).AddTicks(5403),
+                            InsertUser = "System",
+                            IsActive = true,
+                            LastName = "Ay",
+                            Password = "25d55ad283aa400af464c76d713c07ad",
+                            PointsBalance = 0m,
+                            Role = "Admin",
+                            Status = true,
+                            UserName = "gokberk"
+                        });
                 });
 
             modelBuilder.Entity("DigiShop.Data.Domain.Order", b =>
@@ -335,7 +401,7 @@ namespace DigiShop.Data.Migrations
                     b.HasOne("DigiShop.Data.Domain.Order", "Order")
                         .WithMany("OrderDetails")
                         .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DigiShop.Data.Domain.Product", "Product")
@@ -354,13 +420,13 @@ namespace DigiShop.Data.Migrations
                     b.HasOne("DigiShop.Data.Domain.Category", "Category")
                         .WithMany("ProductCategories")
                         .HasForeignKey("CategoryId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.HasOne("DigiShop.Data.Domain.Product", "Product")
                         .WithMany("ProductCategories")
                         .HasForeignKey("ProductId")
-                        .OnDelete(DeleteBehavior.NoAction)
+                        .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
                     b.Navigation("Category");

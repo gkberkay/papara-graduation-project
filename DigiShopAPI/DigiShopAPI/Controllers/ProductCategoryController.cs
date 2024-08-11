@@ -9,56 +9,55 @@ namespace DigiShopAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductController : ControllerBase
+    public class ProductCategoryController : ControllerBase
     {
         private readonly IMediator mediator;
-        public ProductController(IMediator mediator)
+        public ProductCategoryController(IMediator mediator)
         {
             this.mediator = mediator;
         }
 
         [HttpGet]
-        [Authorize]
-        public async Task<ApiResponse<List<ProductResponse>>> GetAll()
+        [Authorize(Roles = "Admin")]
+        public async Task<ApiResponse<List<ProductCategoryResponse>>> GetAll()
         {
-            var operation = new GetAllProductQuery();
+            var operation = new GetAllProductCategoryQuery();
             var result = await mediator.Send(operation);
             return result;
         }
 
-        [HttpGet("{id}")]
-        [Authorize(Roles = "Admin")]
-        public async Task<ApiResponse<ProductResponse>> Get([FromRoute] int id)
+        [HttpGet("GetByProductId/{id}")]
+        [Authorize]
+        public async Task<ApiResponse<List<ProductCategoryResponse>>> GetByProductId([FromRoute] int id)
         {
-            var operation = new GetProductByIdQuery(id);
+            var operation = new GetProductCategoryByProductIdQuery(id);
             var result = await mediator.Send(operation);
             return result;
         }
 
         [HttpGet("GetByCategoryId/{id}")]
         [Authorize]
-        public async Task<ApiResponse<List<ProductResponse>>> GetByCategoryId([FromRoute] int id)
+        public async Task<ApiResponse<List<ProductCategoryResponse>>> GetByCategoryId([FromRoute] int id)
         {
-            var operation = new GetProductByCategoryIdQuery(id);
+            var operation = new GetProductCategoryByCategoryIdQuery(id);
             var result = await mediator.Send(operation);
             return result;
         }
 
         [HttpPut("{id}")]
         [Authorize(Roles = "Admin")]
-        public async Task<ApiResponse> Put(int id, [FromBody] ProductRequest value)
+        public async Task<ApiResponse> Put(int id, [FromBody] ProductCategoryRequest value)
         {
-            var operation = new UpdateProductCommand(id, value);
+            var operation = new UpdateProductCategoryCommand(id, value);
             var result = await mediator.Send(operation);
             return result;
         }
 
         [HttpPost]
         [Authorize(Roles = "Admin")]
-        public async Task<ApiResponse<ProductResponse>> Post([FromBody] ProductRequest Product)
+        public async Task<ApiResponse<ProductCategoryResponse>> Post([FromBody] ProductCategoryRequest ProductCategory)
         {
-            var validationOperation = new ValidateProductCommand(Product);
-            var operation = new CreateProductCommand(Product);
+            var operation = new CreateProductCategoryCommand(ProductCategory);
             var result = await mediator.Send(operation);
             return result;
         }
@@ -67,7 +66,7 @@ namespace DigiShopAPI.Controllers
         [Authorize(Roles = "Admin")]
         public async Task<ApiResponse> Delete(int id)
         {
-            var operation = new DeleteProductCommand(id);
+            var operation = new DeleteProductCategoryCommand(id);
             var result = await mediator.Send(operation);
             return result;
         }

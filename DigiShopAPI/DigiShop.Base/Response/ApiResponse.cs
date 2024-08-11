@@ -29,11 +29,11 @@
         public DateTime ServerDate { get; set; } = DateTime.UtcNow;
         public Guid ReferenceNumber { get; set; } = Guid.NewGuid();
 
-        public ApiResponse(T data)
+        public ApiResponse(T data, string message = "Success")
         {
             IsSuccess = true;
             Data = data;
-            Message = "Success";
+            Message = message;
         }
 
         public ApiResponse(bool isSuccess)

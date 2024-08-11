@@ -1,6 +1,4 @@
-﻿
-
-using DigiShop.Data.Domain;
+﻿using DigiShop.Data.Domain;
 using DigiShop.Data.GenericRepository;
 
 namespace DigiShop.Data.UnitOfWork

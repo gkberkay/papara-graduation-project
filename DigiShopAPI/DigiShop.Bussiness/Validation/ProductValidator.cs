@@ -20,21 +20,8 @@ namespace DigiShop.Bussiness.Command
             RuleFor(x => x.MaxPoints)
                 .NotEmpty().WithMessage("Please specify max points");
 
-            RuleFor(x => x.Active)
-                .NotNull().WithMessage("Please specify whether the product is active");
-
             RuleFor(x => x.Description)
                 .NotEmpty().WithMessage("Please provide a description");
         }
-
-        // private bool BeUniqueEmail(string email)
-        // {
-        //     return !_dbContext.Customers.Any(c => c.Email == email);
-        // }
-
-        // private bool BeUniqueIdentityNumber(string identityNumber)
-        // {
-        //     return !_dbContext.Customers.Any(c => c.IdentityNumber == identityNumber);
-        // }
     }
 }

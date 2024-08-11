@@ -23,7 +23,7 @@ namespace DigiShop.Data.Configuration
                 .WithMany(o => o.OrderDetails)
                 .HasForeignKey(od => od.OrderId)
                 .IsRequired(true)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(od => od.Product)
                 .WithMany(p => p.OrderDetails)

@@ -1,32 +1,18 @@
-﻿using DigiShop.Base.Schema;
-using DigiShop.Schema;
+﻿using DigiShop.Schema;
 using FluentValidation;
 
-namespace DigiShop.Bussiness.Command
+public class OrderValidator : AbstractValidator<OrderRequest>
 {
-    public class OrderValidator : AbstractValidator<OrderRequest>
+    public OrderValidator(DigiShopDbContext dbContext)
     {
-        private readonly DigiShopDbContext _dbContext;
+        RuleFor(x => x.CreditCardInfo)
+            .NotEmpty().WithMessage("Credit card info is required.")
+            .SetValidator(new CreditCardInfoValidator());
 
-        public OrderValidator(DigiShopDbContext dbContext)
-        {
-            _dbContext = dbContext;
+        RuleFor(x => x.Products)
+            .NotEmpty().WithMessage("Product list cannot be empty.");
 
-            RuleFor(x => x.OrderNumber)
-                .NotEmpty().WithMessage("Order number is required.")
-                .MaximumLength(50).WithMessage("Order number cannot be longer than 50 characters.");
-
-            RuleFor(x => x.PointsUsed)
-                .NotNull().WithMessage("Points used is required.")
-                .GreaterThanOrEqualTo(0).WithMessage("Points used must be a valid non-negative number.");
-
-            RuleFor(x => x.CouponAmount)
-                .NotNull().WithMessage("Coupon amount is required.")
-                .GreaterThanOrEqualTo(0).WithMessage("Coupon amount must be a valid non-negative number.");
-
-            RuleFor(x => x.CouponCode)
-                .NotEmpty().WithMessage("Coupon code is required.")
-                .MaximumLength(50).WithMessage("Coupon code cannot be longer than 50 characters.");
-        }
+        RuleFor(x => x.UserId)
+            .GreaterThanOrEqualTo(0).WithMessage("User Id must be a valid non-negative number.");
     }
 }

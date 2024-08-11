@@ -12,15 +12,5 @@ namespace DigiShop.Bussiness.Command
             RuleFor(x => x.SalePrice)
                 .NotEmpty().WithMessage("Please specify an SalePrice");
         }
-
-        //private bool BeUniqueEmail(string email)
-        //{
-        //    return !_dbContext.Customers.Any(c => c.Email == email);
-        //}
-
-        //private bool BeUniqueIdentityNumber(string identityNumber)
-        //{
-        //    return !_dbContext.Customers.Any(c => c.IdentityNumber == identityNumber);
-        //}
     }
 }

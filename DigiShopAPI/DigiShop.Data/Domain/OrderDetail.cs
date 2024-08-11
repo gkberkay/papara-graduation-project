@@ -1,4 +1,5 @@
 ﻿using DigiShop.Base.Entity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace DigiShop.Data.Domain
@@ -7,6 +8,7 @@ namespace DigiShop.Data.Domain
 
     public class OrderDetail : BaseEntity
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
         public int OrderId { get; set; }
         public Order Order { get; set; }

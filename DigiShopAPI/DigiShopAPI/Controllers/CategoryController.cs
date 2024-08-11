@@ -9,7 +9,6 @@ namespace DigiShopAPI.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [Authorize]
     public class CategoryController : ControllerBase
     {
         private readonly IMediator mediator;
@@ -19,6 +18,7 @@ namespace DigiShopAPI.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public async Task<ApiResponse<List<CategoryResponse>>> GetAll()
         {
             var operation = new GetAllCategoryQuery();
@@ -27,6 +27,7 @@ namespace DigiShopAPI.Controllers
         }
 
         [HttpGet("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ApiResponse<CategoryResponse>> Get([FromRoute] int id)
         {
             var operation = new GetCategoryByIdQuery(id);
@@ -35,6 +36,7 @@ namespace DigiShopAPI.Controllers
         }
 
         [HttpPut("{id}")]
+        [Authorize(Roles = "Admin")]
         public async Task<ApiResponse> Put(int id, [FromBody] CategoryRequest value)
         {
             var operation = new UpdateCategoryCommand(id, value);
@@ -43,6 +45,7 @@ namespace DigiShopAPI.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "Admin")]
         public async Task<ApiResponse<CategoryResponse>> Post([FromBody] CategoryRequest Category)
         {
             var validationOperation = new ValidateCategoryCommand(Category);
@@ -51,10 +54,11 @@ namespace DigiShopAPI.Controllers
             return result;
         }
 
-        [HttpDelete("{Id}")]
-        public async Task<ApiResponse> Delete(int Id)
+        [HttpDelete("{id}")]
+        [Authorize(Roles = "Admin")]
+        public async Task<ApiResponse> Delete(int id)
         {
-            var operation = new DeleteCategoryCommand(Id);
+            var operation = new DeleteCategoryCommand(id);
             var result = await mediator.Send(operation);
             return result;
         }

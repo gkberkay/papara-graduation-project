@@ -1,4 +1,5 @@
-﻿using DigiShop.Data.Domain;
+﻿using DigiShop.Base.Helpers;
+using DigiShop.Data.Domain;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -56,6 +57,23 @@ namespace DigiShop.Data.Configuration
                 .OnDelete(DeleteBehavior.Cascade);
 
             builder.ToTable("User");
+
+            builder.HasData(getFirstAdminData());
+        }
+
+        private User getFirstAdminData()
+        {
+            return new User
+            {
+                Id = 1,
+                FirstName = "Gökberk",
+                LastName = "Ay",
+                UserName = "gokberk",
+                Email = "gokberk.ay@gmail.com",
+                Password = HashHelper.CreateMD5("12345678"),
+                Role = "Admin",
+                Status = true
+            };
         }
     }
 }

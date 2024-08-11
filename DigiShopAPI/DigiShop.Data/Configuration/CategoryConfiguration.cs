@@ -26,7 +26,7 @@ namespace DigiShop.Data.Configuration
                 .WithOne(pc => pc.Category)
                 .HasForeignKey(pc => pc.CategoryId)
                 .IsRequired(true)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.ToTable("Category");
         }

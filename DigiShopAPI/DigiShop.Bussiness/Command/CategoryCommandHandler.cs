@@ -29,7 +29,6 @@ namespace DigiShop.Bussiness.Command
         public async Task<ApiResponse<CategoryResponse>> Handle(CreateCategoryCommand request, CancellationToken cancellationToken)
         {
             var mapped = _mapper.Map<CategoryRequest, Category>(request.Request);
-            //mapped.CustomerNumber = new Random().Next(1000000, 9999999);
             await _unitOfWork.CategoryRepository.Insert(mapped);
             await _unitOfWork.Complete();
 
@@ -48,6 +47,13 @@ namespace DigiShop.Bussiness.Command
 
         public async Task<ApiResponse> Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
         {
+            bool isCategoryUsed = await _unitOfWork.ProductCategoryRepository.Any(x => x.CategoryId == request.CategoryId);
+
+            if (isCategoryUsed)
+            {
+                return new ApiResponse("This category cannot be deleted because it contains products.");
+            }
+
             await _unitOfWork.CategoryRepository.Delete(request.CategoryId);
             await _unitOfWork.Complete();
             return new ApiResponse();

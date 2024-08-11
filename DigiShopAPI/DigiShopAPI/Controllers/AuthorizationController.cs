@@ -25,7 +25,6 @@ namespace DigiShopAPI.Controllers
             var operation = new CreateAuthorizationTokenCommand(value);
             var result = await mediator.Send(operation);
             return result;
-
         }
 
     }

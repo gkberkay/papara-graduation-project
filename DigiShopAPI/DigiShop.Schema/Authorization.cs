@@ -8,7 +8,7 @@ namespace DigiShop.Schema
         public string Password { get; set; }
 
     }
-    public class AuthorizationResponse : BaseRequest
+    public class AuthorizationResponse
     {
         public DateTime ExpireTime { get; set; }
         public string AccessToken { get; set; }

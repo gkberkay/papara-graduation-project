@@ -8,7 +8,7 @@ namespace DigiShop.Data.Configuration
     {
         public void Configure(EntityTypeBuilder<ProductCategory> builder)
         {
-            builder.HasKey(pc => new { pc.ProductId, pc.CategoryId });
+            builder.HasKey(pc => pc.Id);
             builder.Property(x => x.InsertDate).IsRequired(true);
             builder.Property(x => x.IsActive).IsRequired(true);
             builder.Property(x => x.InsertUser).IsRequired(true).HasMaxLength(50);
@@ -17,13 +17,13 @@ namespace DigiShop.Data.Configuration
                 .WithMany(p => p.ProductCategories)
                 .HasForeignKey(pc => pc.ProductId)
                 .IsRequired(true)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.HasOne(pc => pc.Category)
                 .WithMany(c => c.ProductCategories)
                 .HasForeignKey(pc => pc.CategoryId)
                 .IsRequired(true)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.Cascade);
 
             builder.ToTable("ProductCategories");
         }

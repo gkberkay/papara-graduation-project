@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using DigiShop.Base.Helpers;
 using DigiShop.Bussiness.Cqrs;
 using DigiShop.Data.Domain;
 using DigiShop.Data.UnitOfWork;
@@ -6,6 +7,7 @@ using DigiShop.Schema;
 using DigiSopAPI.Base.Response;
 using FluentValidation;
 using MediatR;
+using Microsoft.IdentityModel.Tokens;
 
 namespace DigiShop.Bussiness.Command
 {
@@ -29,7 +31,8 @@ namespace DigiShop.Bussiness.Command
         public async Task<ApiResponse<UserResponse>> Handle(CreateUserCommand request, CancellationToken cancellationToken)
         {
             var mapped = _mapper.Map<UserRequest, User>(request.Request);
-            //mapped.CustomerNumber = new Random().Next(1000000, 9999999);
+            mapped.Status = true;
+            mapped.Password = HashHelper.CreateMD5(mapped.Password);
             await _unitOfWork.UserRepository.Insert(mapped);
             await _unitOfWork.Complete();
 
@@ -39,9 +42,27 @@ namespace DigiShop.Bussiness.Command
 
         public async Task<ApiResponse> Handle(UpdateUserCommand request, CancellationToken cancellationToken)
         {
+            var user = await _unitOfWork.UserRepository.GetByIdAsNoTracking(request.UserId);
+
+            if (user == null)
+            {
+                return new ApiResponse("User not found.");
+            }
+
             var mapped = _mapper.Map<UserRequest, User>(request.Request);
             mapped.Id = request.UserId;
-             _unitOfWork.UserRepository.Update(mapped);
+            mapped.Role = user.Role;
+
+            if (!mapped.Password.IsNullOrEmpty() && mapped.Password != HashHelper.CreateMD5(mapped.Password))
+            {
+                mapped.Password = HashHelper.CreateMD5(mapped.Password);
+            }
+            else
+            {
+                mapped.Password = user.Password;
+            }
+
+            _unitOfWork.UserRepository.Update(mapped);
             await _unitOfWork.Complete();
             var response = _mapper.Map<UserResponse>(mapped);
             return new ApiResponse();

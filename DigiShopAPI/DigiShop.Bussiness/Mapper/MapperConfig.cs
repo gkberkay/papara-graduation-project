@@ -4,7 +4,7 @@ using DigiShop.Data.Domain;
 
 namespace DigiShop.Bussiness.Mapper
 {
-    public class MapperConfig:Profile
+    public class MapperConfig : Profile
     {
         public MapperConfig()
         {

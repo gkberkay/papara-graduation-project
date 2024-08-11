@@ -9,6 +9,10 @@ namespace DigiShop.Bussiness.Validation
         public UserValidator(DigiShopDbContext dbContext)
         {
             _dbContext = dbContext;
+
+            RuleFor(x => x.UserName)
+                .NotEmpty().WithMessage("User name is required.");
+
             RuleFor(x => x.FirstName)
                 .NotEmpty().WithMessage("First name is required.")
                 .MaximumLength(50).WithMessage("First name cannot be longer than 50 characters.");
@@ -24,19 +28,6 @@ namespace DigiShop.Bussiness.Validation
             RuleFor(x => x.Password)
                 .NotEmpty().WithMessage("Please specify a password")
                 .MinimumLength(8).WithMessage("Password must be at least 8 characters long");
-
-
-
         }
-
-        //private bool BeUniqueEmail(string email)
-        //{
-        //    return !_dbContext.Customers.Any(c => c.Email == email);
-        //}
-
-        //private bool BeUniqueIdentityNumber(string identityNumber)
-        //{
-        //    return !_dbContext.Customers.Any(c => c.IdentityNumber == identityNumber);
-        //}
     }
 }

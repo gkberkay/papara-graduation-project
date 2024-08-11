@@ -5,14 +5,15 @@ using MediatR;
 using DigiShop.Bussiness.Cqrs;
 using DigiShop.Data.Domain;
 using DigiShop.Schema;
+using DigiShop.Base.Helpers;
+using System.Linq.Expressions;
 
 namespace DigiShop.Bussiness.Query;
 
 public class OrderQueryHandler :
-    IRequestHandler<GetAllOrderQuery, ApiResponse<List<OrderResponse>>>,
-    IRequestHandler<GetOrderByIdQuery, ApiResponse<OrderResponse>>,
-    IRequestHandler<GetOrderByParameterQuery, ApiResponse<List<OrderResponse>>>
-
+    IRequestHandler<GetOrderQuery, ApiResponse<IEnumerable<OrderResponse>>>,
+    IRequestHandler<GetAllOrderQuery, ApiResponse<IEnumerable<OrderResponse>>>,
+    IRequestHandler<GetOrderByOrderNoQuery, ApiResponse<OrderResponse>>
 {
     private readonly IUnitOfWork unitOfWork;
     private readonly IMapper mapper;
@@ -23,33 +24,106 @@ public class OrderQueryHandler :
         this.mapper = mapper;
     }
 
-    public async Task<ApiResponse<List<OrderResponse>>> Handle(GetAllOrderQuery request, CancellationToken cancellationToken)
+    public async Task<ApiResponse<IEnumerable<OrderResponse>>> Handle(GetOrderQuery request, CancellationToken cancellationToken)
     {
-        List<Order> entityList = await unitOfWork.OrderRepository.GetAll();
-        var mappedList = mapper.Map<List<OrderResponse>>(entityList);
-        return new ApiResponse<List<OrderResponse>>(mappedList);
-    }
+        var userId = HelperMethods.GetClaimInfo("Id").ToInt();
 
-    public async Task<ApiResponse<OrderResponse>> Handle(GetOrderByIdQuery request, CancellationToken cancellationToken)
-    {
-        var entity = await unitOfWork.OrderRepository.GetById(request.OrderId);
-        var mapped = mapper.Map<OrderResponse>(entity);
-        return new ApiResponse<OrderResponse>(mapped);
-    }
-
-    public async Task<ApiResponse<List<OrderResponse>>> Handle(GetOrderByParameterQuery request, CancellationToken cancellationToken)
-    {
-        var users = await unitOfWork.OrderRepository.GetAllWithIncludeAsync(
-            x => x.TotalAmount == request.TotalAmount,
-            p => p.CouponAmount,
-            p => p.User,
-            p => p.OrderDetails,
-            p => p.OrderNumber,
-            p => p.PointsUsed
+        var orders = await unitOfWork.OrderRepository.GetAllWithIncludeAndSelectAsync<OrderResponse>(
+            p => p.UserId == userId,
+            s => new OrderResponse
+            {
+                Id = s.Id,
+                OrderNumber = s.OrderNumber,
+                CouponCode = s.CouponCode,
+                CouponAmount = s.CouponAmount,
+                PointsUsed = s.PointsUsed,
+                TotalAmount = s.TotalAmount,
+                UserId = s.UserId,
+                UserName = s.User.UserName,
+                IsActive = s.IsActive,
+                OrderDetails = s.OrderDetails
+                    .Select(x => new OrderProductResponse
+                    {
+                        ProductId = x.ProductId,
+                        ProductName = x.Product.Name,
+                        Quantity = x.Quantity,
+                        Price = x.Price
+                    })
+                .ToList(),
+            },
+            i => i.User, i => i.OrderDetails
         );
-        var customer = users.FirstOrDefault();
-        var mapped = mapper.Map<OrderResponse>(customer);
-        var mappedList = new List<OrderResponse> { mapped };
-        return new ApiResponse<List<OrderResponse>>(mappedList);
+
+        return new ApiResponse<IEnumerable<OrderResponse>>(orders);
+    }
+
+    public async Task<ApiResponse<IEnumerable<OrderResponse>>> Handle(GetAllOrderQuery request, CancellationToken cancellationToken)
+    {
+        Expression<Func<Order, bool>> predicate = x => true;
+
+        if (request.IsActive.HasValue)
+        {
+            predicate = x => x.IsActive == request.IsActive.Value;
+        }
+
+        var orders = await unitOfWork.OrderRepository.GetAllWithIncludeAndSelectAsync<OrderResponse>(
+            predicate,
+            s => new OrderResponse
+            {
+                Id = s.Id,
+                OrderNumber = s.OrderNumber,
+                CouponCode = s.CouponCode,
+                CouponAmount = s.CouponAmount,
+                PointsUsed = s.PointsUsed,
+                TotalAmount = s.TotalAmount,
+                UserId = s.UserId,
+                UserName = s.User.UserName,
+                IsActive = s.IsActive,
+                OrderDetails = s.OrderDetails
+                    .Select(x => new OrderProductResponse
+                    {
+                        ProductId = x.ProductId,
+                        ProductName = x.Product.Name,
+                        Quantity = x.Quantity,
+                        Price = x.Price
+                    })
+                .ToList(),
+            },
+            i => i.User,
+            i => i.OrderDetails
+        );
+
+        return new ApiResponse<IEnumerable<OrderResponse>>(orders);
+    }
+
+    public async Task<ApiResponse<OrderResponse>> Handle(GetOrderByOrderNoQuery request, CancellationToken cancellationToken)
+    {
+        var orders = await unitOfWork.OrderRepository.GetAllWithIncludeAndSelectAsync<OrderResponse>(
+            p => p.OrderNumber == request.OrderNo,
+            s => new OrderResponse
+            {
+                Id = s.Id,
+                OrderNumber = s.OrderNumber,
+                CouponCode = s.CouponCode,
+                CouponAmount = s.CouponAmount,
+                PointsUsed = s.PointsUsed,
+                TotalAmount = s.TotalAmount,
+                UserId = s.UserId,
+                UserName = s.User.UserName,
+                IsActive = s.IsActive,
+                OrderDetails = s.OrderDetails
+                    .Select(x => new OrderProductResponse
+                    {
+                        ProductId = x.ProductId,
+                        ProductName = x.Product.Name,
+                        Quantity = x.Quantity,
+                        Price = x.Price
+                    })
+                .ToList(),
+            },
+            i => i.User, i => i.OrderDetails
+        );
+
+        return new ApiResponse<OrderResponse>(orders.LastOrDefault());
     }
 }

@@ -21,7 +21,7 @@ namespace DigiShop.Data.Configuration
 
             builder.Property(o => o.CouponCode)
                 .HasMaxLength(10)
-                .IsRequired();
+                .IsRequired(false);
 
             builder.Property(o => o.PointsUsed)
                 .IsRequired();
@@ -34,13 +34,13 @@ namespace DigiShop.Data.Configuration
                 .WithMany(u => u.Orders)
                 .HasForeignKey(o => o.UserId)
                 .IsRequired(true)
-                .OnDelete(DeleteBehavior.NoAction);
+                .OnDelete(DeleteBehavior.SetNull);
 
             builder.HasMany(o => o.OrderDetails)
                 .WithOne(od => od.Order)
                 .HasForeignKey(od => od.OrderId)
                 .IsRequired(true)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.ToTable("Order");
         }

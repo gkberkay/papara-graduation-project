@@ -29,7 +29,6 @@ namespace DigiShop.Bussiness.Command
         public async Task<ApiResponse<ProductResponse>> Handle(CreateProductCommand request, CancellationToken cancellationToken)
         {
             var mapped = _mapper.Map<ProductRequest, Product>(request.Request);
-            //mapped.CustomerNumber = new Random().Next(1000000, 9999999);
             await _unitOfWork.ProductRepository.Insert(mapped);
             await _unitOfWork.Complete();
 

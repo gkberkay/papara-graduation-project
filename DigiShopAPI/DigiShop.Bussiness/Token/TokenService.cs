@@ -21,14 +21,14 @@ public class TokenService : ITokenService
 
     public async Task<string> GetToken(string username)
     {
-        User user = await unitOfWork.UserRepository.FirstOrDefault(x => x.UserName == username);
+        User user = await unitOfWork.UserRepository.FirstOrDefaultAsNoTracking(x => x.UserName == username);
 
         return await GetToken(user);
     }
 
     public async Task<string> GetToken(int userId)
     {
-        User user = await unitOfWork.UserRepository.FirstOrDefault(x => x.Id == userId);
+        User user = await unitOfWork.UserRepository.FirstOrDefaultAsNoTracking(x => x.Id == userId);
         return await GetToken(user);
     }
 
@@ -41,7 +41,7 @@ public class TokenService : ITokenService
             jwtConfig.Issuer,
             jwtConfig.Audience,
             claims,
-            expires: DateTime.Now.AddMinutes(jwtConfig.AccessTokenExpiration),
+            expires: DateTime.Now.AddDays(jwtConfig.AccessTokenExpiration),
             signingCredentials: new SigningCredentials(new SymmetricSecurityKey(secret),
                 SecurityAlgorithms.HmacSha256Signature)
         );

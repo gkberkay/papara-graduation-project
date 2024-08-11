@@ -11,7 +11,7 @@ namespace DigiShop.Bussiness.Query;
 public class ProductQueryHandler :
     IRequestHandler<GetAllProductQuery, ApiResponse<List<ProductResponse>>>,
     IRequestHandler<GetProductByIdQuery, ApiResponse<ProductResponse>>,
-    IRequestHandler<GetProductByParameterQuery, ApiResponse<List<ProductResponse>>>
+    IRequestHandler<GetProductByCategoryIdQuery, ApiResponse<List<ProductResponse>>>
 
 {
     private readonly IUnitOfWork unitOfWork;
@@ -37,20 +37,13 @@ public class ProductQueryHandler :
         return new ApiResponse<ProductResponse>(mapped);
     }
 
-    public async Task<ApiResponse<List<ProductResponse>>> Handle(GetProductByParameterQuery request, CancellationToken cancellationToken)
+    public async Task<ApiResponse<List<ProductResponse>>> Handle(GetProductByCategoryIdQuery request, CancellationToken cancellationToken)
     {
-        var users = await unitOfWork.ProductRepository.GetAllWithIncludeAsync(
-            x => x.Name == request.Name,
-            p => p.OrderDetails,
-            p => p.ProductCategories,
-            p => p.Description,
-            p => p.PointsPercentage,
-            p => p.StockCount,
-            p => p.MaxPoints
+        var products = await unitOfWork.ProductRepository.GetAllWithIncludeAsync(
+            x => x.ProductCategories != null && x.ProductCategories.Any(pc => pc.CategoryId == request.CategoryId),
+            x => x.ProductCategories
         );
-        var customer = users.FirstOrDefault();
-        var mapped = mapper.Map<ProductResponse>(customer);
-        var mappedList = new List<ProductResponse> { mapped };
+        var mappedList = mapper.Map<List<ProductResponse>>(products);
         return new ApiResponse<List<ProductResponse>>(mappedList);
     }
 }

@@ -33,22 +33,16 @@ public class Startup
         jwtConfig = Configuration.GetSection("JwtConfig").Get<JwtConfig>();
         services.AddSingleton<JwtConfig>(jwtConfig);
 
-        //// Veritabanı bağlantı dizesini alıyoruz
         var connectionString = Configuration.GetConnectionString("MsSqlServer");
         services.AddDbContext<DigiShopDbContext>(options => options.UseSqlServer(connectionString));
 
-        //// IUnitOfWork servisini ekliyoruz
         services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-        //// AutoMapper konfigürasyonunu ekliyoruz
         var config = new MapperConfiguration(cfg => { cfg.AddProfile(new MapperConfig()); });
         services.AddSingleton(config.CreateMapper());
 
-
         services.AddScoped<ITokenService, TokenService>();
 
-
-        //// FluentValidation'ı hizmet olarak ekleyin
         services.AddControllers().AddFluentValidation(x =>
         {
             x.RegisterValidatorsFromAssemblyContaining<UserValidator>();
@@ -85,7 +79,6 @@ public class Startup
 
         });
 
-        // Swagger hizmetini ekleyin
         services.AddSwaggerGen(c =>
         {
             c.SwaggerDoc("v1", new OpenApiInfo { Title = "DigiShopAPI", Version = "v1" });

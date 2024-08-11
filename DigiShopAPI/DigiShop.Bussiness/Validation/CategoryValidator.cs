@@ -18,7 +18,7 @@ namespace DigiShop.Bussiness.Command
                 .MaximumLength(50).WithMessage("Url cannot be longer than 50 characters.");
 
             RuleFor(x => x.Tags)
-                 .NotEmpty().WithMessage("Please specify an author");
+                 .NotEmpty().WithMessage("Tags is required.");
         }
     }
 }

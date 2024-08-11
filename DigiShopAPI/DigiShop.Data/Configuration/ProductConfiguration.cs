@@ -24,6 +24,9 @@ namespace DigiShop.Data.Configuration
             builder.Property(p => p.IsActive)
                 .IsRequired();
 
+            builder.Property(p => p.Price)
+                .IsRequired();
+
             builder.Property(p => p.PointsPercentage)
                 .IsRequired();
 
@@ -34,15 +37,55 @@ namespace DigiShop.Data.Configuration
                 .WithOne(pc => pc.Product)
                 .HasForeignKey(pc => pc.ProductId)
                 .IsRequired(true)
-                .OnDelete(DeleteBehavior.Cascade);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.HasMany(p => p.OrderDetails)
                 .WithOne(od => od.Product)
                 .HasForeignKey(od => od.ProductId)
                 .IsRequired(true)
-                .OnDelete(DeleteBehavior.SetNull);
+                .OnDelete(DeleteBehavior.NoAction);
 
             builder.ToTable("Product");
+
+            builder.HasData(getSeedProductData());
+        }
+
+
+        private Product[] getSeedProductData()
+        {
+            return new Product[]
+            {
+                new Product
+                {
+                    Id = 1,
+                    Name = "KnightOnline",
+                    Description = "Oyun",
+                    StockCount = 5,
+                    PointsPercentage = 5,
+                    Price = 25,
+                    IsActive = true,
+                },
+                new Product
+                {
+                    Id = 2,
+                    Name = "Csgo",
+                    Description = "Oyun",
+                    StockCount = 10,
+                    PointsPercentage = 3,
+                    Price = 15,
+                    IsActive = true,
+                },
+                new Product
+                {
+                    Id = 3,
+                    Name = "LeagueOfLegends",
+                    Description = "Oyun",
+                    StockCount = 8,
+                    PointsPercentage = 4,
+                    Price = 20,
+                    IsActive = true,
+                }
+            };
         }
     }
 }

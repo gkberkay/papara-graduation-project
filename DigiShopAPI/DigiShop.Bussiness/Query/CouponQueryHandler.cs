@@ -10,9 +10,7 @@ namespace DigiShop.Bussiness.Query;
 
 public class CouponQueryHandler :
     IRequestHandler<GetAllCouponQuery, ApiResponse<List<CouponResponse>>>,
-    IRequestHandler<GetCouponByIdQuery, ApiResponse<CouponResponse>>,
-    IRequestHandler<GetCouponByParameterQuery, ApiResponse<List<CouponResponse>>>
-
+    IRequestHandler<GetCouponByCodeQuery, ApiResponse<CouponResponse>>
 {
     private readonly IUnitOfWork unitOfWork;
     private readonly IMapper mapper;
@@ -30,21 +28,10 @@ public class CouponQueryHandler :
         return new ApiResponse<List<CouponResponse>>(mappedList);
     }
 
-    public async Task<ApiResponse<CouponResponse>> Handle(GetCouponByIdQuery request, CancellationToken cancellationToken)
+    public async Task<ApiResponse<CouponResponse>> Handle(GetCouponByCodeQuery request, CancellationToken cancellationToken)
     {
-        var entity = await unitOfWork.CouponRepository.GetById(request.CouponId);
+        var entity = await unitOfWork.CouponRepository.FirstOrDefaultAsNoTracking(x => x.Code == request.Code);
         var mapped = mapper.Map<CouponResponse>(entity);
         return new ApiResponse<CouponResponse>(mapped);
-    }
-
-    public async Task<ApiResponse<List<CouponResponse>>> Handle(GetCouponByParameterQuery request, CancellationToken cancellationToken)
-    {
-        var Coupons = await unitOfWork.CouponRepository.GetAllWithIncludeAsync(
-            x => x.Code == request.Code
-        );
-        var customer = Coupons.FirstOrDefault();
-        var mapped = mapper.Map<CouponResponse>(customer);
-        var mappedList = new List<CouponResponse> { mapped };
-        return new ApiResponse<List<CouponResponse>>(mappedList);
     }
 }

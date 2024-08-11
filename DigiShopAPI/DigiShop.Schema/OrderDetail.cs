@@ -1,12 +1,9 @@
-﻿
-
-using DigiShop.Base.Schema;
+﻿using DigiShop.Base.Schema;
 
 namespace DigiShop.Schema
 {
     public class OrderDetailRequest : BaseRequest
     {
-        public int OrderDetailId { get; set; }
         public int OrderId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }
@@ -14,7 +11,6 @@ namespace DigiShop.Schema
     }
     public class OrderDetailResponse : BaseResponse
     {
-        public int OrderDetailId { get; set; }
         public int OrderId { get; set; }
         public int ProductId { get; set; }
         public int Quantity { get; set; }

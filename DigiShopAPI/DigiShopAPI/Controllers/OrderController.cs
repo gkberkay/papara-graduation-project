@@ -19,42 +19,42 @@ namespace DigiShopAPI.Controllers
         }
 
         [HttpGet]
-        public async Task<ApiResponse<List<OrderResponse>>> GetAll()
+        public async Task<ApiResponse<IEnumerable<OrderResponse>>> Get()
         {
-            var operation = new GetAllOrderQuery();
+            var operation = new GetOrderQuery();
             var result = await mediator.Send(operation);
             return result;
         }
 
-        [HttpGet("{id}")]
-        public async Task<ApiResponse<OrderResponse>> Get([FromRoute] int id)
+        [HttpGet("All")]
+        public async Task<ApiResponse<IEnumerable<OrderResponse>>> GetAll(bool? isActive = null)
         {
-            var operation = new GetOrderByIdQuery(id);
+            var operation = new GetAllOrderQuery(isActive);
             var result = await mediator.Send(operation);
             return result;
         }
 
-        [HttpPut("{id}")]
-        public async Task<ApiResponse> Put(int id, [FromBody] OrderRequest value)
+        [HttpGet("{orderNo}")]
+        public async Task<ApiResponse<OrderResponse>> GetByOrderNo([FromRoute] string orderNo)
         {
-            var operation = new UpdateOrderCommand(id, value);
+            var operation = new GetOrderByOrderNoQuery(orderNo);
             var result = await mediator.Send(operation);
             return result;
         }
 
         [HttpPost]
-        public async Task<ApiResponse<OrderResponse>> Post([FromBody] OrderRequest Order)
+        public async Task<ApiResponse> Post([FromBody] OrderRequest order)
         {
-            var validationOperation = new ValidateOrderCommand(Order);
-            var operation = new CreateOrderCommand(Order);
+            var validationOperation = new ValidateOrderCommand(order);
+            var operation = new CreateOrderCommand(order);
             var result = await mediator.Send(operation);
             return result;
         }
 
-        [HttpDelete("{Id}")]
-        public async Task<ApiResponse> Delete(int Id)
+        [HttpDelete("{id}")]
+        public async Task<ApiResponse> Delete(int id)
         {
-            var operation = new DeleteOrderCommand(Id);
+            var operation = new DeleteOrderCommand(id);
             var result = await mediator.Send(operation);
             return result;
         }
