@@ -1,16 +1,19 @@
 ﻿using AutoMapper;
+using DigiShop.Base.Log;
 using DigiShop.Base.Token;
 using DigiShop.Bussiness.Cqrs;
 using DigiShop.Bussiness.Mapper;
 using DigiShop.Bussiness.Token;
 using DigiShop.Bussiness.Validation;
 using DigiShop.Data.UnitOfWork;
+using DigiShopAPI.Middleware;
 using FluentValidation.AspNetCore;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
+using Serilog;
 using System.Reflection;
 using System.Text;
 using System.Text.Json.Serialization;
@@ -112,6 +115,17 @@ public class Startup
             app.UseSwagger();
             app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "DigiShopAPI v1"));
         }
+        app.UseMiddleware<HeartbeatMiddleware>();
+        app.UseMiddleware<ErrorHandlerMiddleware>();
+        Action<RequestProfilerModel> requestResponseHandler = requestProfilerModel =>
+        {
+            Log.Information("-------------Request-Begin------------");
+            Log.Information(requestProfilerModel.Request);
+            Log.Information(Environment.NewLine);
+            Log.Information(requestProfilerModel.Response);
+            Log.Information("-------------Request-End------------");
+        };
+        app.UseMiddleware<RequestLoggingMiddleware>(requestResponseHandler);
 
         app.UseHttpsRedirection();
         app.UseAuthentication();

@@ -1,4 +1,6 @@
-﻿namespace DigiShopAPI;
+﻿using Serilog;
+
+namespace DigiShopAPI;
 
 public class Program
 {
@@ -8,11 +10,15 @@ public class Program
             .AddJsonFile("appsettings.json")
             .Build();
 
+        Log.Logger = new LoggerConfiguration().ReadFrom.Configuration(config).CreateLogger();
+        Log.Information("Application is starting...");
+
         CreateHostBuilder(args).Build().Run();
     }
 
     public static IHostBuilder CreateHostBuilder(string[] args) =>
         Host.CreateDefaultBuilder(args)
+            .UseSerilog()
             .ConfigureWebHostDefaults(webBuilder =>
             {
                 webBuilder.UseStartup<Startup>();

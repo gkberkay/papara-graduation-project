@@ -19,6 +19,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="9.0.0-preview.6.24327.7" />
+    <PackageReference Include="Microsoft.IO.RecyclableMemoryStream" Version="2.3.2" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
@@ -27,6 +28,10 @@
     <ProjectReference Include="..\DigiShop.Bussiness\DigiShop.Bussiness.csproj" />
     <ProjectReference Include="..\DigiShop.Data\DigiShop.Data.csproj" />
     <ProjectReference Include="..\DigiShop.Schema\DigiShop.Schema.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="logs\" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,19 @@
+2024-08-12 16:04:18.855 [INF] Application is starting...
+2024-08-12 16:04:36.695 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:04:36.852 [INF] -------------Request-Begin------------
+2024-08-12 16:04:36.854 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Category 
+QueryString:  
+Request Body: 
+2024-08-12 16:04:36.855 [INF] 
+
+2024-08-12 16:04:36.856 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Category 
+QueryString:  
+StatusCode: 401 
+Response Body: 
+2024-08-12 16:04:36.856 [INF] -------------Request-End------------
