@@ -7,7 +7,7 @@
         public DateTime ServerDate { get; set; } = DateTime.UtcNow;
         public Guid ReferenceNumber { get; set; } = Guid.NewGuid();
 
-        public ApiResponse(string message = null)
+        public ApiResponse(string message = null, bool isSuccess = false)
         {
             if (string.IsNullOrEmpty(message))
             {
@@ -15,7 +15,7 @@
             }
             else
             {
-                IsSuccess = false;
+                IsSuccess = isSuccess;
                 Message = message;
             }
         }

@@ -17,3 +17,1189 @@ QueryString:
 StatusCode: 401 
 Response Body: 
 2024-08-12 16:04:36.856 [INF] -------------Request-End------------
+2024-08-12 16:13:09.211 [INF] Application is starting...
+2024-08-12 16:13:20.061 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:13:20.165 [INF] -------------Request-Begin------------
+2024-08-12 16:13:20.167 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Category 
+QueryString:  
+Request Body: 
+2024-08-12 16:13:20.167 [INF] 
+
+2024-08-12 16:13:20.168 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Category 
+QueryString:  
+StatusCode: 401 
+Response Body: 
+2024-08-12 16:13:20.169 [INF] -------------Request-End------------
+2024-08-12 16:53:02.049 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:53:03.112 [WRN] No store type was specified for the decimal property 'SalePrice' on entity type 'Coupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 16:53:03.117 [WRN] No store type was specified for the decimal property 'CouponAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 16:53:03.119 [WRN] No store type was specified for the decimal property 'PointsUsed' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 16:53:03.120 [WRN] No store type was specified for the decimal property 'TotalAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 16:53:03.122 [WRN] No store type was specified for the decimal property 'Price' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 16:53:03.123 [WRN] No store type was specified for the decimal property 'MaxPoints' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 16:53:03.124 [WRN] No store type was specified for the decimal property 'PointsPercentage' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 16:53:03.126 [WRN] No store type was specified for the decimal property 'DigitalWallet' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 16:53:03.128 [WRN] No store type was specified for the decimal property 'PointsBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 16:53:04.364 [INF] -------------Request-Begin------------
+2024-08-12 16:53:04.365 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Authorization 
+QueryString:  
+Request Body: {
+  "UserName": "gokberk",
+  "Password": "12345678"
+}
+2024-08-12 16:53:04.367 [INF] 
+
+2024-08-12 16:53:04.368 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Authorization 
+QueryString:  
+StatusCode: 200 
+Response Body: {
+  "Data": {
+    "ExpireTime": "2024-09-11T16:53:04.3392868+03:00",
+    "AccessToken": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6Imdva2JlcmsiLCJJZCI6IjEiLCJSb2xlIjoiQWRtaW4iLCJTdGF0dXMiOiJUcnVlIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiR8O2a2JlcmsgQXkiLCJleHAiOjE3MjYwNjI3ODQsImlzcyI6IkRpZ2lTaG9wQVBJIiwiYXVkIjoiRGlnaVNob3BBUEkifQ.X1r8kwGgQGMlTMQJfvQQnulJ2PvOfJ5P8V0BVRU9CYs",
+    "UserName": "gokberk"
+  },
+  "Message": "Success",
+  "IsSuccess": true,
+  "ServerDate": "2024-08-12T13:53:04.3395854Z",
+  "ReferenceNumber": "eca541f0-b52d-4cca-93c4-8b3a99966ed5"
+}
+2024-08-12 16:53:04.371 [INF] -------------Request-End------------
+2024-08-12 16:54:13.403 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:54:13.605 [INF] -------------Request-Begin------------
+2024-08-12 16:54:13.612 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/User/All 
+QueryString:  
+Request Body: 
+2024-08-12 16:54:13.613 [INF] 
+
+2024-08-12 16:54:13.615 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/User/All 
+QueryString:  
+StatusCode: 200 
+Response Body: {
+  "Data": [
+    {
+      "FirstName": "Gökberk",
+      "LastName": "Ay",
+      "UserName": "gokberk",
+      "Email": "gokberk.ay@gmail.com",
+      "Role": "Admin",
+      "DigitalWallet": 0.00,
+      "PointsBalance": 0.00,
+      "Id": 1
+    }
+  ],
+  "Message": "Success",
+  "IsSuccess": true,
+  "ServerDate": "2024-08-12T13:54:13.5968305Z",
+  "ReferenceNumber": "fa068df7-cafb-4068-aed5-155ee4ccce2b"
+}
+2024-08-12 16:54:13.618 [INF] -------------Request-End------------
+2024-08-12 16:54:50.708 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:54:50.905 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 16:54:50.962 [INF] -------------Request-Begin------------
+2024-08-12 16:54:50.964 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/User 
+QueryString:  
+Request Body: {
+  "FirstName": "Papara",
+  "LastName": "para",
+  "UserName": "papara",
+  "Email": "papara@gmail.com",
+  "Password": "12345678",
+  "Status": true,
+  "DigitalWallet": 0,
+  "PointsBalance": 0
+}
+2024-08-12 16:54:50.965 [INF] 
+
+2024-08-12 16:54:50.967 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/User 
+QueryString:  
+StatusCode: 200 
+Response Body: {
+  "Data": {
+    "FirstName": "Papara",
+    "LastName": "para",
+    "UserName": "papara",
+    "Email": "papara@gmail.com",
+    "Role": "User",
+    "DigitalWallet": 0,
+    "PointsBalance": 0,
+    "Id": 2
+  },
+  "Message": "Success",
+  "IsSuccess": true,
+  "ServerDate": "2024-08-12T13:54:50.9613991Z",
+  "ReferenceNumber": "58464b28-cedf-4ffa-907a-f8c2cc64a94d"
+}
+2024-08-12 16:54:50.969 [INF] -------------Request-End------------
+2024-08-12 16:55:40.565 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:55:40.585 [INF] -------------Request-Begin------------
+2024-08-12 16:55:40.587 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Authorization 
+QueryString:  
+Request Body: {
+  "UserName": "papara",
+  "Password": "12345678"
+}
+2024-08-12 16:55:40.588 [INF] 
+
+2024-08-12 16:55:40.589 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Authorization 
+QueryString:  
+StatusCode: 200 
+Response Body: {
+  "Data": {
+    "ExpireTime": "2024-09-11T16:55:40.5848223+03:00",
+    "AccessToken": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6InBhcGFyYSIsIklkIjoiMiIsIlJvbGUiOiJVc2VyIiwiU3RhdHVzIjoiVHJ1ZSIsImh0dHA6Ly9zY2hlbWFzLm1pY3Jvc29mdC5jb20vd3MvMjAwOC8wNi9pZGVudGl0eS9jbGFpbXMvcm9sZSI6IlVzZXIiLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiUGFwYXJhIHBhcmEiLCJleHAiOjE3MjYwNjI5NDAsImlzcyI6IkRpZ2lTaG9wQVBJIiwiYXVkIjoiRGlnaVNob3BBUEkifQ.7VVBIVv7oAaT1ayUwOBbd5a-tTCh0rPWkI8YA-53BEI",
+    "UserName": "papara"
+  },
+  "Message": "Success",
+  "IsSuccess": true,
+  "ServerDate": "2024-08-12T13:55:40.5848232Z",
+  "ReferenceNumber": "4298119d-b998-40bd-aa90-dc5fc61ac2e0"
+}
+2024-08-12 16:55:40.591 [INF] -------------Request-End------------
+2024-08-12 16:55:51.570 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:55:51.594 [INF] -------------Request-Begin------------
+2024-08-12 16:55:51.596 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Category 
+QueryString:  
+Request Body: 
+2024-08-12 16:55:51.597 [INF] 
+
+2024-08-12 16:55:51.599 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Category 
+QueryString:  
+StatusCode: 200 
+Response Body: {
+  "Data": [],
+  "Message": "Success",
+  "IsSuccess": true,
+  "ServerDate": "2024-08-12T13:55:51.5927831Z",
+  "ReferenceNumber": "1bc161d3-3151-46b7-9f7d-22f6279cde1f"
+}
+2024-08-12 16:55:51.600 [INF] -------------Request-End------------
+2024-08-12 16:56:12.663 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:56:12.673 [INF] -------------Request-Begin------------
+2024-08-12 16:56:12.675 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Product 
+QueryString:  
+Request Body: {
+  "Name": "string",
+  "Description": "string",
+  "StockCount": 5,
+  "PointsPercentage": 50,
+  "Price": 1500,
+  "MaxPoints": 25,
+  "IsActive": true
+}
+2024-08-12 16:56:12.678 [INF] 
+
+2024-08-12 16:56:12.680 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Product 
+QueryString:  
+StatusCode: 403 
+Response Body: 
+2024-08-12 16:56:12.682 [INF] -------------Request-End------------
+2024-08-12 16:57:36.675 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:57:36.752 [INF] -------------Request-Begin------------
+2024-08-12 16:57:36.757 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Order 
+QueryString:  
+Request Body: {
+  "Products": [
+    {
+      "ProductId": 1,
+      "Quantity": 3
+    },
+    {
+      "ProductId": 2,
+      "Quantity": 4
+    }
+  ],
+  "CouponCode": "string",
+  "CreditCardInfo": {
+    "CardNo": "1111111111111111",
+    "CVV": 434,
+    "ExpirationMonth": 6,
+    "ExpirationYear": 2025
+  }
+}
+2024-08-12 16:57:36.760 [INF] 
+
+2024-08-12 16:57:36.761 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Order 
+QueryString:  
+StatusCode: 200 
+Response Body: {
+  "Message": "No coupon was found for the entered coupon code",
+  "IsSuccess": false,
+  "ServerDate": "2024-08-12T13:57:36.7497406Z",
+  "ReferenceNumber": "4a5361e6-3151-495e-a652-df9109441bea"
+}
+2024-08-12 16:57:36.763 [INF] -------------Request-End------------
+2024-08-12 16:57:53.121 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:57:53.318 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 16:57:53.652 [FTL] Path=/api/Order || Method=POST || Exception=Error mapping types.
+
+Mapping types:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Type Map configuration:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Destination Member:
+OrderDetails
+
+2024-08-12 16:57:53.772 [ERR] An unhandled exception has occurred while executing the request.
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'The stream with Id 6075389f-a31e-4b2e-9a87-0b4b37fdc6aa and Tag  is disposed.'.
+   at Microsoft.IO.RecyclableMemoryStream.ThrowDisposedException() in /_/src/RecyclableMemoryStream.cs:line 1453
+   at Microsoft.IO.RecyclableMemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count) in /_/src/RecyclableMemoryStream.cs:line 997
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(Boolean writeToStream, ReadOnlyMemory`1 data, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask`1.GetTaskForValueTaskSource(IValueTaskSource`1 t)
+--- End of stack trace from previous location ---
+   at DigiShopAPI.Middleware.ErrorHandlerMiddleware.Invoke(HttpContext context) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Middleware\ErrorHandlerMiddleware.cs:line 35
+   at DigiShopAPI.Middleware.HeartbeatMiddleware.Invoke(HttpContext context) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Middleware\HeartbeatMiddleware.cs:line 24
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 16:57:53.886 [ERR] An exception was thrown attempting to display the error page.
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'The stream with Id 6075389f-a31e-4b2e-9a87-0b4b37fdc6aa and Tag  is disposed.'.
+   at Microsoft.IO.RecyclableMemoryStream.ThrowDisposedException() in /_/src/RecyclableMemoryStream.cs:line 1453
+   at Microsoft.IO.RecyclableMemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count) in /_/src/RecyclableMemoryStream.cs:line 997
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(Boolean writeToStream, ReadOnlyMemory`1 data, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask`1.GetTaskForValueTaskSource(IValueTaskSource`1 t)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.DisplayExceptionContent(ErrorContext errorContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 16:57:53.899 [ERR] Connection id "0HN5QQ21SFSV1", Request id "0HN5QQ21SFSV1:00000019": An unhandled exception was thrown by the application.
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'The stream with Id 6075389f-a31e-4b2e-9a87-0b4b37fdc6aa and Tag  is disposed.'.
+   at Microsoft.IO.RecyclableMemoryStream.ThrowDisposedException() in /_/src/RecyclableMemoryStream.cs:line 1453
+   at Microsoft.IO.RecyclableMemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count) in /_/src/RecyclableMemoryStream.cs:line 997
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(Boolean writeToStream, ReadOnlyMemory`1 data, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask`1.GetTaskForValueTaskSource(IValueTaskSource`1 t)
+--- End of stack trace from previous location ---
+   at DigiShopAPI.Middleware.ErrorHandlerMiddleware.Invoke(HttpContext context) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Middleware\ErrorHandlerMiddleware.cs:line 35
+   at DigiShopAPI.Middleware.HeartbeatMiddleware.Invoke(HttpContext context) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Middleware\HeartbeatMiddleware.cs:line 24
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-08-12 16:58:11.221 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:58:11.312 [INF] -------------Request-Begin------------
+2024-08-12 16:58:11.314 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Order 
+QueryString:  
+Request Body: 
+2024-08-12 16:58:11.315 [INF] 
+
+2024-08-12 16:58:11.316 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Order 
+QueryString:  
+StatusCode: 200 
+Response Body: {
+  "Data": [
+    {
+      "UserId": 2,
+      "UserName": "papara",
+      "TotalAmount": 135.00,
+      "CouponAmount": 0.00,
+      "CouponCode": null,
+      "PointsUsed": 0.00,
+      "OrderNumber": "447635645",
+      "IsActive": true,
+      "OrderDetails": [
+        {
+          "ProductId": 1,
+          "ProductName": "KnightOnline",
+          "Price": 25.00,
+          "Quantity": 3
+        },
+        {
+          "ProductId": 2,
+          "ProductName": "Csgo",
+          "Price": 15.00,
+          "Quantity": 4
+        }
+      ],
+      "Id": 1
+    }
+  ],
+  "Message": "Success",
+  "IsSuccess": true,
+  "ServerDate": "2024-08-12T13:58:11.3033116Z",
+  "ReferenceNumber": "56ae1748-e30d-4da6-be51-f18d9b8d8d36"
+}
+2024-08-12 16:58:11.319 [INF] -------------Request-End------------
+2024-08-12 16:58:44.187 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 16:58:52.102 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 16:58:52.707 [FTL] Path=/api/Order || Method=POST || Exception=Error mapping types.
+
+Mapping types:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Type Map configuration:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Destination Member:
+OrderDetails
+
+2024-08-12 16:58:52.820 [ERR] An unhandled exception has occurred while executing the request.
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'The stream with Id c3c7dac4-45c7-47e9-bdd2-d3468649d403 and Tag  is disposed.'.
+   at Microsoft.IO.RecyclableMemoryStream.ThrowDisposedException() in /_/src/RecyclableMemoryStream.cs:line 1453
+   at Microsoft.IO.RecyclableMemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count) in /_/src/RecyclableMemoryStream.cs:line 997
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(Boolean writeToStream, ReadOnlyMemory`1 data, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask`1.GetTaskForValueTaskSource(IValueTaskSource`1 t)
+--- End of stack trace from previous location ---
+   at DigiShopAPI.Middleware.ErrorHandlerMiddleware.Invoke(HttpContext context) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Middleware\ErrorHandlerMiddleware.cs:line 35
+   at DigiShopAPI.Middleware.HeartbeatMiddleware.Invoke(HttpContext context) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Middleware\HeartbeatMiddleware.cs:line 24
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 16:58:52.830 [ERR] An exception was thrown attempting to display the error page.
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'The stream with Id c3c7dac4-45c7-47e9-bdd2-d3468649d403 and Tag  is disposed.'.
+   at Microsoft.IO.RecyclableMemoryStream.ThrowDisposedException() in /_/src/RecyclableMemoryStream.cs:line 1453
+   at Microsoft.IO.RecyclableMemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count) in /_/src/RecyclableMemoryStream.cs:line 997
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(Boolean writeToStream, ReadOnlyMemory`1 data, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask`1.GetTaskForValueTaskSource(IValueTaskSource`1 t)
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.DisplayExceptionContent(ErrorContext errorContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 16:58:52.840 [ERR] Connection id "0HN5QQ21SFSV1", Request id "0HN5QQ21SFSV1:0000001D": An unhandled exception was thrown by the application.
+System.ObjectDisposedException: Cannot access a disposed object.
+Object name: 'The stream with Id c3c7dac4-45c7-47e9-bdd2-d3468649d403 and Tag  is disposed.'.
+   at Microsoft.IO.RecyclableMemoryStream.ThrowDisposedException() in /_/src/RecyclableMemoryStream.cs:line 1453
+   at Microsoft.IO.RecyclableMemoryStream.Write(Byte[] buffer, Int32 offset, Int32 count) in /_/src/RecyclableMemoryStream.cs:line 997
+   at System.IO.MemoryStream.WriteAsync(ReadOnlyMemory`1 buffer, CancellationToken cancellationToken)
+--- End of stack trace from previous location ---
+   at System.IO.Pipelines.StreamPipeWriter.FlushAsyncInternal(Boolean writeToStream, ReadOnlyMemory`1 data, CancellationToken cancellationToken)
+   at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+   at System.Threading.Tasks.ValueTask`1.GetTaskForValueTaskSource(IValueTaskSource`1 t)
+--- End of stack trace from previous location ---
+   at DigiShopAPI.Middleware.ErrorHandlerMiddleware.Invoke(HttpContext context) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Middleware\ErrorHandlerMiddleware.cs:line 35
+   at DigiShopAPI.Middleware.HeartbeatMiddleware.Invoke(HttpContext context) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Middleware\HeartbeatMiddleware.cs:line 24
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+   at Microsoft.WebTools.BrowserLink.Net.BrowserLinkMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.BrowserRefreshMiddleware.InvokeAsync(HttpContext context)
+   at Microsoft.AspNetCore.Server.Kestrel.Core.Internal.Http.HttpProtocol.ProcessRequests[TContext](IHttpApplication`1 application)
+2024-08-12 17:01:48.405 [INF] Application is starting...
+2024-08-12 17:02:19.105 [WRN] No store type was specified for the decimal property 'SalePrice' on entity type 'Coupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:02:19.111 [WRN] No store type was specified for the decimal property 'CouponAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:02:19.113 [WRN] No store type was specified for the decimal property 'PointsUsed' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:02:19.114 [WRN] No store type was specified for the decimal property 'TotalAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:02:19.116 [WRN] No store type was specified for the decimal property 'Price' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:02:19.119 [WRN] No store type was specified for the decimal property 'MaxPoints' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:02:19.124 [WRN] No store type was specified for the decimal property 'PointsPercentage' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:02:19.126 [WRN] No store type was specified for the decimal property 'DigitalWallet' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:02:19.129 [WRN] No store type was specified for the decimal property 'PointsBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:02:19.774 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:02:55.740 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:02:56.381 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Type Map configuration:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Destination Member:
+OrderDetails
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+OrderDetail -> OrderProductResponse
+DigiShop.Data.Domain.OrderDetail -> DigiShop.Schema.OrderProductResponse
+   at lambda_method557(Closure, OrderDetail, OrderProductResponse, ResolutionContext)
+   at lambda_method556(Closure, Object, OrderResponse, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method556(Closure, Object, OrderResponse, ResolutionContext)
+   at DigiShop.Bussiness.Command.OrderCommandHandler.Handle(CreateOrderCommand request, CancellationToken cancellationToken) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShop.Bussiness\Command\OrderCommandHandler.cs:line 65
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at DigiShopAPI.Controllers.OrderController.Post(OrderRequest order) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Controllers\OrderController.cs:line 50
+   at lambda_method220(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 17:06:09.012 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:06:09.652 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Type Map configuration:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Destination Member:
+OrderDetails
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+OrderDetail -> OrderProductResponse
+DigiShop.Data.Domain.OrderDetail -> DigiShop.Schema.OrderProductResponse
+   at lambda_method557(Closure, OrderDetail, OrderProductResponse, ResolutionContext)
+   at lambda_method556(Closure, Object, OrderResponse, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method556(Closure, Object, OrderResponse, ResolutionContext)
+   at DigiShop.Bussiness.Command.OrderCommandHandler.Handle(CreateOrderCommand request, CancellationToken cancellationToken) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShop.Bussiness\Command\OrderCommandHandler.cs:line 65
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at DigiShopAPI.Controllers.OrderController.Post(OrderRequest order) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Controllers\OrderController.cs:line 50
+   at lambda_method569(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 17:08:16.319 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:08:16.930 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Type Map configuration:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Destination Member:
+OrderDetails
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+OrderDetail -> OrderProductResponse
+DigiShop.Data.Domain.OrderDetail -> DigiShop.Schema.OrderProductResponse
+   at lambda_method557(Closure, OrderDetail, OrderProductResponse, ResolutionContext)
+   at lambda_method556(Closure, Object, OrderResponse, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method556(Closure, Object, OrderResponse, ResolutionContext)
+   at DigiShop.Bussiness.Command.OrderCommandHandler.Handle(CreateOrderCommand request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at DigiShopAPI.Controllers.OrderController.Post(OrderRequest order) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Controllers\OrderController.cs:line 50
+   at lambda_method585(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 17:09:32.897 [INF] Application is starting...
+2024-08-12 17:09:46.835 [WRN] No store type was specified for the decimal property 'SalePrice' on entity type 'Coupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:09:46.841 [WRN] No store type was specified for the decimal property 'CouponAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:09:46.842 [WRN] No store type was specified for the decimal property 'PointsUsed' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:09:46.843 [WRN] No store type was specified for the decimal property 'TotalAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:09:46.845 [WRN] No store type was specified for the decimal property 'Price' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:09:46.846 [WRN] No store type was specified for the decimal property 'MaxPoints' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:09:46.847 [WRN] No store type was specified for the decimal property 'PointsPercentage' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:09:46.848 [WRN] No store type was specified for the decimal property 'DigitalWallet' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:09:46.849 [WRN] No store type was specified for the decimal property 'PointsBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:10:09.782 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:10:10.234 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Type Map configuration:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Destination Member:
+OrderDetails
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+OrderDetail -> OrderProductResponse
+DigiShop.Data.Domain.OrderDetail -> DigiShop.Schema.OrderProductResponse
+   at lambda_method538(Closure, OrderDetail, OrderProductResponse, ResolutionContext)
+   at lambda_method537(Closure, Object, OrderResponse, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method537(Closure, Object, OrderResponse, ResolutionContext)
+   at DigiShop.Bussiness.Command.OrderCommandHandler.Handle(CreateOrderCommand request, CancellationToken cancellationToken) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShop.Bussiness\Command\OrderCommandHandler.cs:line 65
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at DigiShopAPI.Controllers.OrderController.Post(OrderRequest order) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Controllers\OrderController.cs:line 50
+   at lambda_method51(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 17:17:45.249 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:17:45.856 [ERR] An unhandled exception has occurred while executing the request.
+AutoMapper.AutoMapperMappingException: Error mapping types.
+
+Mapping types:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Type Map configuration:
+Order -> OrderResponse
+DigiShop.Data.Domain.Order -> DigiShop.Schema.OrderResponse
+
+Destination Member:
+OrderDetails
+
+ ---> AutoMapper.AutoMapperMappingException: Missing type map configuration or unsupported mapping.
+
+Mapping types:
+OrderDetail -> OrderProductResponse
+DigiShop.Data.Domain.OrderDetail -> DigiShop.Schema.OrderProductResponse
+   at lambda_method538(Closure, OrderDetail, OrderProductResponse, ResolutionContext)
+   at lambda_method537(Closure, Object, OrderResponse, ResolutionContext)
+   --- End of inner exception stack trace ---
+   at lambda_method537(Closure, Object, OrderResponse, ResolutionContext)
+   at DigiShop.Bussiness.Command.OrderCommandHandler.Handle(CreateOrderCommand request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at DigiShopAPI.Controllers.OrderController.Post(OrderRequest order) in C:\Users\aygkb\source\papara-graduation-project\DigiShopAPI\DigiShopAPI\Controllers\OrderController.cs:line 50
+   at lambda_method550(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 17:19:32.665 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:24:18.210 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:26:02.538 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:26:47.204 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:27:09.356 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:27:09.479 [ERR] An unhandled exception has occurred while executing the request.
+System.MissingMethodException: Attempted to invoke a deleted method implementation. This can happen when a method is deleted or its name or signature is changed while the application is running.
+   at DigiSopAPI.Base.Response.ApiResponse..ctor(String message)
+   at DigiShop.Bussiness.Command.CategoryCommandHandler.Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at DigiShopAPI.Controllers.CategoryController.Delete(Int32 id)
+   at lambda_method743(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 17:28:00.154 [ERR] An unhandled exception has occurred while executing the request.
+System.MissingMethodException: Attempted to invoke a deleted method implementation. This can happen when a method is deleted or its name or signature is changed while the application is running.
+   at DigiSopAPI.Base.Response.ApiResponse..ctor(String message)
+   at DigiShop.Bussiness.Command.CategoryCommandHandler.Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at DigiShopAPI.Controllers.CategoryController.Delete(Int32 id)
+   at lambda_method743(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 17:30:24.664 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:30:50.687 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:31:11.393 [ERR] An unhandled exception has occurred while executing the request.
+System.MissingMethodException: Attempted to invoke a deleted method implementation. This can happen when a method is deleted or its name or signature is changed while the application is running.
+   at DigiSopAPI.Base.Response.ApiResponse..ctor(String message)
+   at DigiShop.Bussiness.Command.CategoryCommandHandler.Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at DigiShopAPI.Controllers.CategoryController.Delete(Int32 id)
+   at lambda_method743(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 17:31:28.555 [ERR] An unhandled exception has occurred while executing the request.
+System.MissingMethodException: Attempted to invoke a deleted method implementation. This can happen when a method is deleted or its name or signature is changed while the application is running.
+   at DigiSopAPI.Base.Response.ApiResponse..ctor(String message)
+   at DigiShop.Bussiness.Command.CategoryCommandHandler.Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at DigiShopAPI.Controllers.CategoryController.Delete(Int32 id)
+   at lambda_method743(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 17:31:53.933 [ERR] An unhandled exception has occurred while executing the request.
+System.MissingMethodException: Attempted to invoke a deleted method implementation. This can happen when a method is deleted or its name or signature is changed while the application is running.
+   at DigiSopAPI.Base.Response.ApiResponse..ctor(String message)
+   at DigiShop.Bussiness.Command.CategoryCommandHandler.Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at DigiShopAPI.Controllers.CategoryController.Delete(Int32 id)
+   at lambda_method743(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 17:32:01.903 [ERR] An unhandled exception has occurred while executing the request.
+System.MissingMethodException: Attempted to invoke a deleted method implementation. This can happen when a method is deleted or its name or signature is changed while the application is running.
+   at DigiSopAPI.Base.Response.ApiResponse..ctor(String message)
+   at DigiShop.Bussiness.Command.CategoryCommandHandler.Handle(DeleteCategoryCommand request, CancellationToken cancellationToken)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestExceptionActionProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPostProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at MediatR.Pipeline.RequestPreProcessorBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next)
+   at DigiShopAPI.Controllers.CategoryController.Delete(Int32 id)
+   at lambda_method743(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-08-12 17:32:18.650 [INF] Application is starting...
+2024-08-12 17:32:33.128 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 17:32:34.081 [WRN] No store type was specified for the decimal property 'SalePrice' on entity type 'Coupon'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:32:34.085 [WRN] No store type was specified for the decimal property 'CouponAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:32:34.086 [WRN] No store type was specified for the decimal property 'PointsUsed' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:32:34.087 [WRN] No store type was specified for the decimal property 'TotalAmount' on entity type 'Order'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:32:34.089 [WRN] No store type was specified for the decimal property 'Price' on entity type 'OrderDetail'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:32:34.090 [WRN] No store type was specified for the decimal property 'MaxPoints' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:32:34.091 [WRN] No store type was specified for the decimal property 'PointsPercentage' on entity type 'Product'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:32:34.092 [WRN] No store type was specified for the decimal property 'DigitalWallet' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:32:34.094 [WRN] No store type was specified for the decimal property 'PointsBalance' on entity type 'User'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2024-08-12 17:32:34.938 [INF] -------------Request-Begin------------
+2024-08-12 17:32:34.939 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Authorization 
+QueryString:  
+Request Body: {
+  "UserName": "gokberk",
+  "Password": "12345678"
+}
+2024-08-12 17:32:34.941 [INF] 
+
+2024-08-12 17:32:34.942 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Authorization 
+QueryString:  
+StatusCode: 200 
+Response Body: {
+  "Data": {
+    "ExpireTime": "2024-09-11T17:32:34.916016+03:00",
+    "AccessToken": "eyJhbGciOiJodHRwOi8vd3d3LnczLm9yZy8yMDAxLzA0L3htbGRzaWctbW9yZSNobWFjLXNoYTI1NiIsInR5cCI6IkpXVCJ9.eyJVc2VyTmFtZSI6Imdva2JlcmsiLCJJZCI6IjEiLCJSb2xlIjoiQWRtaW4iLCJTdGF0dXMiOiJUcnVlIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiQWRtaW4iLCJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiR8O2a2JlcmsgQXkiLCJleHAiOjE3MjYwNjUxNTQsImlzcyI6IkRpZ2lTaG9wQVBJIiwiYXVkIjoiRGlnaVNob3BBUEkifQ.aP1sZSxX8VTz3u_-HGGkioZinx08PuK68tygvC0kGuo",
+    "UserName": "gokberk"
+  },
+  "Message": "Success",
+  "IsSuccess": true,
+  "ServerDate": "2024-08-12T14:32:34.9163076Z",
+  "ReferenceNumber": "f204edfb-1529-485e-bdae-1c25ed9a399d"
+}
+2024-08-12 17:32:34.945 [INF] -------------Request-End------------
+2024-08-12 17:32:48.349 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 17:32:55.321 [INF] -------------Request-Begin------------
+2024-08-12 17:32:55.323 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Category/2 
+QueryString:  
+Request Body: 
+2024-08-12 17:32:55.326 [INF] 
+
+2024-08-12 17:32:55.328 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Category/2 
+QueryString:  
+StatusCode: 200 
+Response Body: {
+  "Message": "This category cannot be deleted because it contains products.",
+  "IsSuccess": false,
+  "ServerDate": "2024-08-12T14:32:52.2629157Z",
+  "ReferenceNumber": "03fe69a2-c59c-4ec0-8e54-263c91f92952"
+}
+2024-08-12 17:32:55.331 [INF] -------------Request-End------------
+2024-08-12 17:33:22.225 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 17:33:24.624 [WRN] Savepoints are disabled because Multiple Active Result Sets (MARS) is enabled. If 'SaveChanges' fails, then the transaction cannot be automatically rolled back to a known clean state. Instead, the transaction should be rolled back by the application before retrying 'SaveChanges'. See https://go.microsoft.com/fwlink/?linkid=2149338 for more information and examples. To identify the code which triggers this warning, call 'ConfigureWarnings(w => w.Throw(SqlServerEventId.SavepointsDisabledBecauseOfMARS))'.
+2024-08-12 17:33:27.761 [INF] -------------Request-Begin------------
+2024-08-12 17:33:27.765 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Order 
+QueryString:  
+Request Body: {
+  "Products": [
+    {
+      "ProductId": 1,
+      "Quantity": 3
+    },
+    {
+      "ProductId": 2,
+      "Quantity": 4
+    }
+  ],
+  "CreditCardInfo": {
+    "CardNo": "1111111111111111",
+    "CVV": 434,
+    "ExpirationMonth": 6,
+    "ExpirationYear": 2025
+  }
+}
+2024-08-12 17:33:27.771 [INF] 
+
+2024-08-12 17:33:27.773 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Order 
+QueryString:  
+StatusCode: 200 
+Response Body: {
+  "Message": "Order number 881049195 has been created.",
+  "IsSuccess": true,
+  "ServerDate": "2024-08-12T14:33:24.6912591Z",
+  "ReferenceNumber": "54958d31-f2de-4de6-9487-3e6c96e7d866"
+}
+2024-08-12 17:33:27.783 [INF] -------------Request-End------------
+2024-08-12 17:33:45.174 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 17:33:45.368 [INF] -------------Request-Begin------------
+2024-08-12 17:33:45.375 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Order/881049195%20 
+QueryString:  
+Request Body: 
+2024-08-12 17:33:45.382 [INF] 
+
+2024-08-12 17:33:45.385 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Order/881049195%20 
+QueryString:  
+StatusCode: 200 
+Response Body: {
+  "Data": {
+    "UserId": 1,
+    "UserName": "gokberk",
+    "TotalAmount": 135.00,
+    "CouponAmount": 0.00,
+    "CouponCode": null,
+    "PointsUsed": 0.00,
+    "OrderNumber": "881049195",
+    "IsActive": true,
+    "OrderDetails": [
+      {
+        "ProductId": 1,
+        "ProductName": "KnightOnline",
+        "Price": 25.00,
+        "Quantity": 3
+      },
+      {
+        "ProductId": 2,
+        "ProductName": "Csgo",
+        "Price": 15.00,
+        "Quantity": 4
+      }
+    ],
+    "Id": 10
+  },
+  "Message": "Success",
+  "IsSuccess": true,
+  "ServerDate": "2024-08-12T14:33:45.3521551Z",
+  "ReferenceNumber": "c5cbd830-c14a-4a77-9955-86224db82bd2"
+}
+2024-08-12 17:33:45.391 [INF] -------------Request-End------------
+2024-08-12 17:34:24.215 [INF] LogRequestLoggingMiddleware.Invoke
+2024-08-12 17:34:24.262 [INF] -------------Request-Begin------------
+2024-08-12 17:34:24.264 [INF] Http Request Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Order/All 
+QueryString: ?isActive=true 
+Request Body: 
+2024-08-12 17:34:24.266 [INF] 
+
+2024-08-12 17:34:24.269 [INF] Http Response Information: 
+Schema:https 
+Host: localhost:7201 
+Path: /api/Order/All 
+QueryString: ?isActive=true 
+StatusCode: 200 
+Response Body: {
+  "Data": [
+    {
+      "UserId": 2,
+      "UserName": "papara",
+      "TotalAmount": 135.00,
+      "CouponAmount": 0.00,
+      "CouponCode": null,
+      "PointsUsed": 0.00,
+      "OrderNumber": "447635645",
+      "IsActive": true,
+      "OrderDetails": [
+        {
+          "ProductId": 1,
+          "ProductName": "KnightOnline",
+          "Price": 25.00,
+          "Quantity": 3
+        },
+        {
+          "ProductId": 2,
+          "ProductName": "Csgo",
+          "Price": 15.00,
+          "Quantity": 4
+        }
+      ],
+      "Id": 1
+    },
+    {
+      "UserId": 2,
+      "UserName": "papara",
+      "TotalAmount": 135.00,
+      "CouponAmount": 0.00,
+      "CouponCode": null,
+      "PointsUsed": 0.00,
+      "OrderNumber": "121944943",
+      "IsActive": true,
+      "OrderDetails": [
+        {
+          "ProductId": 1,
+          "ProductName": "KnightOnline",
+          "Price": 25.00,
+          "Quantity": 3
+        },
+        {
+          "ProductId": 2,
+          "ProductName": "Csgo",
+          "Price": 15.00,
+          "Quantity": 4
+        }
+      ],
+      "Id": 2
+    },
+    {
+      "UserId": 2,
+      "UserName": "papara",
+      "TotalAmount": 135.00,
+      "CouponAmount": 0.00,
+      "CouponCode": null,
+      "PointsUsed": 0.00,
+      "OrderNumber": "591281639",
+      "IsActive": true,
+      "OrderDetails": [
+        {
+          "ProductId": 1,
+          "ProductName": "KnightOnline",
+          "Price": 25.00,
+          "Quantity": 3
+        },
+        {
+          "ProductId": 2,
+          "ProductName": "Csgo",
+          "Price": 15.00,
+          "Quantity": 4
+        }
+      ],
+      "Id": 3
+    },
+    {
+      "UserId": 2,
+      "UserName": "papara",
+      "TotalAmount": 135.00,
+      "CouponAmount": 0.00,
+      "CouponCode": null,
+      "PointsUsed": 0.00,
+      "OrderNumber": "118990145",
+      "IsActive": true,
+      "OrderDetails": [
+        {
+          "ProductId": 1,
+          "ProductName": "KnightOnline",
+          "Price": 25.00,
+          "Quantity": 3
+        },
+        {
+          "ProductId": 2,
+          "ProductName": "Csgo",
+          "Price": 15.00,
+          "Quantity": 4
+        }
+      ],
+      "Id": 4
+    },
+    {
+      "UserId": 2,
+      "UserName": "papara",
+      "TotalAmount": 135.00,
+      "CouponAmount": 0.00,
+      "CouponCode": null,
+      "PointsUsed": 0.00,
+      "OrderNumber": "084964538",
+      "IsActive": true,
+      "OrderDetails": [
+        {
+          "ProductId": 1,
+          "ProductName": "KnightOnline",
+          "Price": 25.00,
+          "Quantity": 3
+        },
+        {
+          "ProductId": 2,
+          "ProductName": "Csgo",
+          "Price": 15.00,
+          "Quantity": 4
+        }
+      ],
+      "Id": 5
+    },
+    {
+      "UserId": 1,
+      "UserName": "gokberk",
+      "TotalAmount": 135.00,
+      "CouponAmount": 0.00,
+      "CouponCode": null,
+      "PointsUsed": 0.00,
+      "OrderNumber": "881049195",
+      "IsActive": true,
+      "OrderDetails": [
+        {
+          "ProductId": 1,
+          "ProductName": "KnightOnline",
+          "Price": 25.00,
+          "Quantity": 3
+        },
+        {
+          "ProductId": 2,
+          "ProductName": "Csgo",
+          "Price": 15.00,
+          "Quantity": 4
+        }
+      ],
+      "Id": 10
+    }
+  ],
+  "Message": "Success",
+  "IsSuccess": true,
+  "ServerDate": "2024-08-12T14:34:24.260105Z",
+  "ReferenceNumber": "23532337-d81b-4593-9b25-3cb1ec7d006c"
+}
+2024-08-12 17:34:24.302 [INF] -------------Request-End------------

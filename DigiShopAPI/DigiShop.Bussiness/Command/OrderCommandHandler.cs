@@ -62,8 +62,7 @@ namespace DigiShop.Bussiness.Command
             await _unitOfWork.OrderRepository.Insert(order);
             await _unitOfWork.Complete();
 
-            var response = _mapper.Map<OrderResponse>(order);
-            return new ApiResponse($"Order number {order.OrderNumber} has been created.");
+            return new ApiResponse($"Order number {order.OrderNumber} has been created.",true);
         }
 
         private void CalculatePointsBalance(List<Product> products, List<OrderProduct> orderProducts, User user, Order order)
